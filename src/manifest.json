@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "letus-grower",
-  "version": 0.0,
+  "version": "0.0",
   "description": "LETUSをより便利にする拡張機能です。",
   "content_scripts": [
     {
