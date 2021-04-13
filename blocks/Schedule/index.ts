@@ -1,23 +1,25 @@
 import { html } from 'lit-html'
-import './style.css'
 
 export default function Schedule() {
   return html`
     <div class="schedule-wrapper">
       <div class="schedule">
         <div class="week-list">
-          <div class="week-item">月</div>
-          <div class="week-item">火</div>
-          <div class="week-item">水</div>
-          <div class="week-item">木</div>
-          <div class="week-item">金</div>
+          ${['月', '火', '水', '木', '金'].map(
+            (week) => html`<div class="week-item">${week}</div>`
+          )}
         </div>
         <div class="timeinterval-list">
-          <div class="timeinterval-item">08:50 - 10:20</div>
-          <div class="timeinterval-item">10:00 - 12:00</div>
-          <div class="timeinterval-item">12:00 - 14:00</div>
-          <div class="timeinterval-item">14:00 - 16:00</div>
-          <div class="timeinterval-item">16:00 - 18:00</div>
+          ${[
+            '08:50 - 10:20',
+            '10:00 - 12:00',
+            '12:00 - 14:00',
+            '14:00 - 16:00',
+            '16:00 - 18:00',
+          ].map(
+            (timeInterval) =>
+              html`<div class="timeinterval-item">${timeInterval}</div>`
+          )}
         </div>
         <div class="content-list">
           <!-- 月 -->
