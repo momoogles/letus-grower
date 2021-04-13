@@ -1,4 +1,5 @@
 import { html } from 'lit-html'
+import './style.css'
 
 const template = html`
   <div class="schedule-wrapper">
