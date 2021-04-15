@@ -28,26 +28,24 @@ export class LgSchedule extends LitElement {
       '16:10 - 17:40',
     ]
     return html`
-      <div class="schedule-wrapper">
-        <div class="schedule">
-          <div class="week-list">
-            ${Object.keys(CONTENTS).map(
-              (week) => html`<div class="week-item">${week}</div>`
-            )}
-          </div>
-          <div class="timeinterval-list">
-            ${TIMEINTERVALS.map(
-              (timeInterval) =>
-                html`<div class="timeinterval-item">${timeInterval}</div>`
-            )}
-          </div>
-          <div class="content-list">
-            ${Object.values(CONTENTS).flatMap((weekContents) =>
-              weekContents.map(
-                (content) => html`<a class="content-item">${content[0]}</a>`
-              )
-            )}
-          </div>
+      <div class="schedule">
+        <div class="week-list">
+          ${Object.keys(CONTENTS).map(
+            (week) => html`<div class="week-item">${week}</div>`
+          )}
+        </div>
+        <div class="timeinterval-list">
+          ${TIMEINTERVALS.map(
+            (timeInterval) =>
+              html`<div class="timeinterval-item">${timeInterval}</div>`
+          )}
+        </div>
+        <div class="content-list">
+          ${Object.values(CONTENTS).flatMap((weekContents) =>
+            weekContents.map(
+              (content) => html`<a class="content-item">${content[0]}</a>`
+            )
+          )}
         </div>
       </div>
     `
@@ -65,9 +63,7 @@ export class LgSchedule extends LitElement {
         --hishusentaku-color: #9ac7d9;
         --sentaku-color: #f2dbae;
         --ippan-color: #f2c6a0;
-      }
 
-      .schedule-wrapper {
         display: flex;
         overflow: auto;
         width: fit-content;
