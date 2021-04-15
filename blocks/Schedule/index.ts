@@ -24,7 +24,7 @@ const TIMEINTERVALS = [
   '16:10 - 17:40',
 ]
 
-const template = html`
+export const template = html`
   <div class="schedule-wrapper">
     <div class="schedule">
       <div class="week-list">
@@ -39,16 +39,14 @@ const template = html`
         )}
       </div>
       <div class="content-list">
-        ${Object.values(CONTENTS).flatMap(
-          (content) => html`
-            <a class="content-item${` ${content[1]}`}">${content[0]}</a>
-          `
+        ${Object.values(CONTENTS).flatMap((contents) =>
+          contents.map(
+            (content) => html`
+              <a class="content-item${` ${content[1]}`}">${content[0]}</a>
+            `
+          )
         )}
       </div>
     </div>
   </div>
 `
-
-export default function Schedule() {
-  return template
-}

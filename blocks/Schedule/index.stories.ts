@@ -1,8 +1,8 @@
-import Schedule from '.'
+import { template } from '.'
 
 export default {
   title: 'Blocks/Schedule',
 }
 
-const Template = () => Schedule()
+const Template = () => template
 export const Basic = Template.bind({})
