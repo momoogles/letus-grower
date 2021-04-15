@@ -1,4 +1,5 @@
 import { VIEWPORTS } from '../utils/viewports'
+import { configure } from '@storybook/web-components'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -17,4 +18,14 @@ export const parameters = {
       date: /Date$/,
     },
   },
+}
+
+const req = require.context('../blocks', true, /\.stories\.(ts|tsx)$/)
+configure(req, module)
+if (module.hot) {
+  module.hot.accept(req.id, () => {
+    const currentLocationHref = window.location.href
+    window.history.pushState(null, null, currentLocationHref)
+    window.location.reload()
+  })
 }

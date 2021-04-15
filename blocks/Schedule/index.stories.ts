@@ -1,8 +1,8 @@
-import { template } from '.'
+import { html } from 'lit-html'
+import '.'
 
 export default {
-  title: 'Blocks/Schedule',
+  title: 'blocks/schedule',
 }
 
-const Template = () => template
-export const Basic = Template.bind({})
+export const Basic = () => html`<lg-schedule></lg-schedule>`

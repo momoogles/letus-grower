@@ -1,6 +1,20 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["es2019"]
-  }
+    "target": "es6",
+    "lib": ["es2019", "dom", "dom.iterable"],
+    "outDir": "./dist",
+    "rootDir": "./blocks",
+    "baseUrl": "./blocks",
+    "strict": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "plugins": [
+      {
+        "name": "ts-lit-plugin",
+        "strict": true
+      }
+    ]
+  },
+  "include": ["blocks/**/*.ts"],
+  "exclude": ["node_modules", "blocks/**/*.stories.ts"]
 }
