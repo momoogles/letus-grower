@@ -42,9 +42,15 @@ export class LgSchedule extends LitElement {
         </div>
         <div class="content-list">
           ${Object.values(CONTENTS).flatMap((weekContents) =>
-            weekContents.map(
-              (content) => html`<a class="content-item">${content[0]}</a>`
-            )
+            weekContents.map((content) => {
+              const className = `content-item ${content[2] ?? ''}`
+              const url = content[1]
+                ? `https://letus.ed.tus.ac.jp/course/view.php?id=${content[1]}`
+                : ''
+              return url
+                ? html`<a class="${className}" href="${url}">${content[0]}</a>`
+                : html`<div class="${className}">${content[0]}</div>`
+            })
           )}
         </div>
       </div>
