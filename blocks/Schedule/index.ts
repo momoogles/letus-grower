@@ -4,7 +4,8 @@ import './style.css'
 type Week = '月' | '火' | '水' | '木' | '金'
 type ContentName = string
 type ContentType = 'hishusentaku' | 'hishu' | 'sentaku' | 'ippan'
-type Content = [ContentName, ContentType?]
+type ContentId = number
+type Content = [ContentName, ContentId?, ContentType?]
 
 const CONTENTS: {
   [week in Week]: Content[]
@@ -40,11 +41,16 @@ export const template = html`
       </div>
       <div class="content-list">
         ${Object.values(CONTENTS).flatMap((contents) =>
-          contents.map(
-            (content) => html`
-              <a class="content-item${` ${content[1]}`}">${content[0]}</a>
+          contents.map((content) => {
+            const href = content[0]
+              ? `href="https://letus.ed.tus.ac.jp/course/view.php?id=${content[0]}"`
+              : ''
+            return html`
+              <a class="content-item${` ${content[2]}`}" ${href}}
+                >${content[0]}</a
+              >
             `
-          )
+          })
         )}
       </div>
     </div>
