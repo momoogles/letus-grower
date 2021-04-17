@@ -1,13 +1,13 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "letus-grower",
   "version": "0.0",
   "description": "LETUSをより便利にする拡張機能です。",
   "content_scripts": [
     {
       "matches": ["https://letus.ed.tus.ac.jp/*"],
-      "css": ["style.css"],
-      "js": ["main.js"]
+      "css": ["./style.css"],
+      "js": ["./main.js"]
     }
   ]
 }
