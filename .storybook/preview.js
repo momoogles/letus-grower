@@ -20,7 +20,7 @@ export const parameters = {
   },
 }
 
-const req = require.context('../blocks', true, /\.stories\.(ts|tsx)$/)
+const req = require.context('../src/blocks', true, /\.stories\.(ts|tsx)$/)
 configure(req, module)
 if (module.hot) {
   module.hot.accept(req.id, () => {

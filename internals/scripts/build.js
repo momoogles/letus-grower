@@ -5,7 +5,7 @@ const { exit } = require('process')
 
 async function build() {
   try {
-    const entryPoints = await glob('blocks/**/*[!.stories].ts')
+    const entryPoints = await glob('src/blocks/**/*[!.stories].ts')
     const options = {
       bundle: true,
       target: 'es6',

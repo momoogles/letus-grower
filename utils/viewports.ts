@@ -1,6 +1,16 @@
-import { ViewportMap } from '@storybook/addon-viewport/dist/ts3.9/models'
+type ViewportType = 'mobile' | 'tablet' | 'desktop'
+type Viewports = {
+  [key in string]: {
+    name: string
+    styles: {
+      width: string
+      height: string
+    }
+    type: ViewportType
+  }
+}
 
-export const VIEWPORTS: ViewportMap = {
+export const VIEWPORTS: Viewports = {
   small: {
     name: 'sm',
     styles: {
